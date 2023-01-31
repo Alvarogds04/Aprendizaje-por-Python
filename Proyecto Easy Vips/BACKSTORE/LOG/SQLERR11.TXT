@@ -1,0 +1,49 @@
+11/12/2022
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las11/12/2022  10:33:23
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las11/12/2022  10:33:23
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las11/12/2022  10:34:18
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las11/12/2022  10:34:19
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las11/12/2022  10:41:49
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las11/12/2022  10:41:49
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las11/12/2022  14:37:19
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las11/12/2022  14:37:19
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+

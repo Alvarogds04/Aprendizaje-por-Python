@@ -1,0 +1,25 @@
+13/10/2022
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las13/10/2022  21:58:13
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las13/10/2022  21:58:13
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+SELECT * FROM [MANIDM$$] WHERE ESP = :P1
+
+ERROR: a Las13/10/2022  23:27:31
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+
+INSERT INTO [MANIDM$$] (FORM, CFORM, ESP) VALUES (:P1,:P2,:P3)
+
+ERROR: a Las13/10/2022  23:27:31
+'C:\projects\CodySQL\Idiomas.mdb' no es una ruta de acceso válida. Asegúrese de que la ruta está escrita correctamente y que está conectado al servidor donde se encuentra el archivo
+
+

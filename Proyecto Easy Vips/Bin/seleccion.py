@@ -2,8 +2,10 @@ import os
 import tkinter as tk
 from tkinter import *
 import AVEC2
+import sqlite3
+import subprocess
 
-def seleccion(treeav):                                      #HACE LA SELECCION DEL UN ITEM
+def seleccion():                                      #HACE LA SELECCION DEL UN ITEM
     curItem = AVEC2.treeav.focus()
     print("--------------------------")
     if AVEC2.treeav.parent(curItem) == "":
@@ -18,7 +20,6 @@ def seleccion(treeav):                                      #HACE LA SELECCION D
         IP = values[0]
         ping_time = seleccion_focus.get_ping_time(IP)
         values.append(ping_time)
-
     print(padre)
     print(texto)
     print(IP)
@@ -53,20 +54,7 @@ def seleccion_focus(padre,texto,IP,ping_time):                            #TE MU
 
         countrow+=1
     
-    def get_ping_time(ip):
-        response = os.popen("ping -c 1 " + ip).read()
-        time_index = response.find("time=")
-        if time_index != -1:
-            time = response[time_index+5:time_index+9]
-            return float(time)
-        return None
-    ping_time = get_ping_time(IP)
-    if ping_time:
-        print("Tiempo de ping: ", ping_time, "ms")
-        seleccion.values.append(ping_time) # agregar tiempo de ping como una nueva variable
-        AVEC2.AVEC2.tree.item(child_id, values=seleccion.values) # actualizar los valores de la fila con el nuevo tiempo de ping
-    else:
-        print("No se pudo obtener el tiempo de ping")
+    
 
 def search_command(event=None):
 
@@ -85,4 +73,25 @@ def search_command(event=None):
         AVEC2.list1.delete(0, 'end')
         for word in AVEC2.liststuff:
             AVEC2.list1.insert('end', word)
+
+
+def Backstore():
+    
+    curItem = AVEC2.treeav.focus()
+    if AVEC2.treeav.parent(curItem) == "":
+        padre = AVEC2.treeav.item(curItem)['text']
+        IP = ""
+    else:
+        padre = AVEC2.treeav.parent(curItem)
+    con = sqlite3.connect("locales.db", check_same_thread=False)
+    cur = con.cursor()
+    cur.execute('SELECT IP  FROM "'+ padre + "WHERE type ='TPV1'")
+    rows = cur.fetchall()
+    
+    with open(os.path.join("BACKSTORE", "MICROMAN.txt"), "w") as f:
+        for row in rows:
+            f.write(row[0] + "\n")  
+    
+    subprocess.run([os.path.join(os.getcwd(), "BACKSTORE", "CodyShopBackStore.exe")])
+
 

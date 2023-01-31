@@ -9,10 +9,11 @@ import subprocess
 import csv
 
 from Bin.about import *
+#from Bin.BACKSTORE import *
 from Bin.CALculadora import *
 from Bin.datos import *
 from Bin.resource_path import *
-from Bin.Seach_and_Selection import *
+from Bin.Busqueda_avanzada import *
 from Bin.searchpos import *
 from Bin.seleccion import *
 from Bin.SQLite import *
@@ -74,9 +75,14 @@ lsb.pack(side=RIGHT,fill=BOTH) # ,fill=Y
 
 list1.configure(yscrollcommand=lsb.set)
 
+
+
 b3=Button(frame0,text="Busqueda avanzada", width=30, compound="center",command=lambda: busqueda_avanzada())#boton pedir carpeta  height=2,  
 b3.config(bg="#4c4a48",bd=0,fg="white",cursor="hand2")#,font="arial")
 b3.pack(pady=5) #,padx=20 side=LEFT
+
+#b4 = Button(frame0, text="BACKSTORE", command=lambda: subprocess.Popen(BACKSTORE))
+#b4.pack()
 
 ##///////// FRAME DERECHO
 
@@ -123,14 +129,18 @@ eport['values'] = ('5900', '6000')
 eport.current(0)
 eport.pack(side=LEFT)
 
-b1=Button(v0,text="Conectar", width=30, compound="center",command=lambda: conectuvnc(linea))#boton pedir carpeta  height=2,
+
+b1=Button(v0,text="Conectar", width=30, compound="center",command=lambda: conectuvnc())#boton pedir carpeta  height=2, 
 b1.config(bg="#4c4a48",bd=0,fg="white",cursor="hand2")#,font="arial")
 b1.pack(pady=5) #,padx=20 side=LEFT
 
-b2=Button(v0,text="Ping", width=30, compound="center",command=lambda: ping(linea))#boton pedir carpeta  height=2,
+b2=Button(v0,text="Ping", width=30, compound="center",command=lambda: ping())#boton pedir carpeta  height=2,
 b2.config(bg="#4c4a48",bd=0,fg="white",cursor="hand2")#,font="arial")
 b2.pack(pady=5) #,padx=20 side=LEFT
 
+b4=Button(frame1,text="BACKSTORE", width=30, compound="center", command=lambda: Backstore())#boton nuevo boton
+b4.config(bg="#4c4a48",bd=0,fg="white",cursor="hand2")#,font="arial")
+b4.pack(pady=5) #,padx=20 side=LEFT
 
 
 ##////// comandos

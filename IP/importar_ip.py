@@ -4,7 +4,7 @@ import openpyxl
 cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=ZEATCSQL2.zena.local;DATABASE=VIPS;UID=CodisysSupport;PWD=Cambiame01')
 cursor = cnxn.cursor()
 
-query = "select hip,PCDES,IPPC from manhtv$$ where des ='TPV1'"
+query = "select PCDES from manhtv$$ where des ='TPV1'"
 cursor.execute(query)
 
 # Crear una nueva hoja de cálculo
