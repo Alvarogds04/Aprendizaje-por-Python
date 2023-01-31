@@ -1,14 +1,15 @@
 import sqlite3
 import tkinter as tk
 from tkinter import *
-from tkinter import filedialog
 from tkinter import ttk
 import re
-import threading
+
+from Bin.SQLite import *
+import AVEC2
 
 
 def import_db():
-    file_path = filedialog.askopenfilename(filetypes=[("DB files", "*.db")])
+    file_path = AVEC2.filedialog.askopenfilename(filetypes=[("DB files", "*.db")])
     if file_path:
         con = sqlite3.connect(file_path)
         return con
@@ -54,13 +55,13 @@ def update_db(con, v1, frame11, limportado, progressbar):
     limportado["text"] = "Completado"
 
 def exceltodb():
-    con = connect_to_db()
+    con = import_db()
     if con:
         v1, frame11, limportado, progressbar = create_gui()
         update_db(con, v1, frame11, limportado, progressbar)
 
-def start_exceltodb_thread(event):
+def start_exceltodb_thread():
     global exceltodb_thread
-    exceltodb_thread = threading.Thread(target=exceltodb)
+    exceltodb_thread = AVEC2.threading.Thread(target=exceltodb)
     exceltodb_thread.daemon = True
     exceltodb_thread.start()

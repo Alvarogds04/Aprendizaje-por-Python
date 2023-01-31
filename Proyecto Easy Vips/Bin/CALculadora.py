@@ -1,12 +1,14 @@
 import tkinter as tk
-
+from tkinter import *
+from Bin.SQLite import *
+import AVEC2
 
 def CALculadora():
     
     # GUI
-    v3 = tk.Toplevel(v0)
+    v3 = tk.Toplevel(AVEC2.v0)
     v3.title("CALculadora") #titulo
-    v3.iconbitmap(resource_path('AVEC.ico'))
+    v3.iconbitmap(AVEC2.resource_path_temporal('AVEC.ico'))
     v3.geometry("275x370") # Cambia el tamanno de la ventana
     v3.resizable(False, False) # tamanno minimo de la ventana
 
