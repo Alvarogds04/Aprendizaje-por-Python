@@ -6,6 +6,7 @@ import sqlite3
 import subprocess
 
 def seleccion():                                      #HACE LA SELECCION DEL UN ITEM
+    global padre
     curItem = AVEC2.treeav.focus()
     print("--------------------------")
     if AVEC2.treeav.parent(curItem) == "":
@@ -29,10 +30,15 @@ def seleccion():                                      #HACE LA SELECCION DEL UN 
     search_command()
     AVEC2.View(padre)
     seleccion_focus(padre,texto,IP,ping_time)
-
+    padre2=padre
+    
+    return padre2
 
 
 def seleccion_focus(padre,texto,IP,ping_time):                            #TE MUESTRA LOS DATOS DEL ELEMENTO QUE SELECCIONASTE
+    
+    AVEC2.cur.execute('SELECT IP  FROM "'+ padre + "WHERE type ='TPV1'")
+    rows = AVEC2.cur.fetchall()
     AVEC2.cur.execute('SELECT * FROM "'+padre+'"')
     rows = AVEC2.cur.fetchall()
     count=0
@@ -75,23 +81,7 @@ def search_command(event=None):
             AVEC2.list1.insert('end', word)
 
 
-def Backstore():
-    
-    curItem = AVEC2.treeav.focus()
-    if AVEC2.treeav.parent(curItem) == "":
-        padre = AVEC2.treeav.item(curItem)['text']
-        IP = ""
-    else:
-        padre = AVEC2.treeav.parent(curItem)
-    con = sqlite3.connect("locales.db", check_same_thread=False)
-    cur = con.cursor()
-    cur.execute('SELECT IP  FROM "'+ padre + "WHERE type ='TPV1'")
-    rows = cur.fetchall()
-    
-    with open(os.path.join("BACKSTORE", "MICROMAN.txt"), "w") as f:
-        for row in rows:
-            f.write(row[0] + "\n")  
-    
-    subprocess.run([os.path.join(os.getcwd(), "BACKSTORE", "CodyShopBackStore.exe")])
+
+
 
 
