@@ -1,6 +1,8 @@
 import pyodbc
 import openpyxl
 
+
+
 cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=ZEATCSQL2.zena.local;DATABASE=VIPS;UID=CodisysSupport;PWD=Cambiame01')
 cursor = cnxn.cursor()
 
